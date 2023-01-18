@@ -20,7 +20,7 @@ func NewEnsureDefaultTagsRule() *EnsureDefaultTagsRule {
 
 // Name returns the rule name
 func (r *EnsureDefaultTagsRule) Name() string {
-	return "aws_instance_example_type"
+	return "ensure_default_tags"
 }
 
 // Enabled returns whether the rule is enabled by default
