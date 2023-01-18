@@ -9,7 +9,7 @@ import (
 func main() {
 	plugin.Serve(&plugin.ServeOpts{
 		RuleSet: &tflint.BuiltinRuleSet{
-			Name:    "tflint-ruleset-0north-tflint-plugin",
+			Name:    "tflint-ruleset-0north-plugin",
 			Version: "0.1.0",
 			Rules: []tflint.Rule{
 				rules.NewEnsureDefaultTagsRule(),
