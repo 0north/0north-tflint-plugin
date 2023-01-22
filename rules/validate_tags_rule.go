@@ -46,7 +46,7 @@ func (r *ValidateTagsRule) Severity() tflint.Severity {
 
 // Link returns the rule reference link
 func (r *ValidateTagsRule) Link() string {
-	return ""
+	return "https://github.com/0north/tflint-ruleset-0north-plugin/blob/main/docs/rules/validate_tags_rule.md"
 }
 
 // Checks the rule

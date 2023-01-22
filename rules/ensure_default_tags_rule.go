@@ -48,7 +48,7 @@ func (r *EnsureDefaultTagsRule) Severity() tflint.Severity {
 
 // Link returns the rule reference link
 func (r *EnsureDefaultTagsRule) Link() string {
-	return ""
+	return "https://github.com/0north/tflint-ruleset-0north-plugin/blob/main/docs/rules/ensure_default_tags_rule.md"
 }
 
 // Checks the rule
