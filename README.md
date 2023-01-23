@@ -2,7 +2,7 @@
 
 [![Build Status](https://github.com/terraform-linters/tflint-ruleset-template/workflows/build/badge.svg?branch=main)](https://github.com/terraform-linters/tflint-ruleset-template/actions)
 
-This is the repository for ZeroNorths custom TFLint ruleset.
+This is the repository for ZeroNorth's custom TFLint ruleset.
 
 ## Requirements
 
