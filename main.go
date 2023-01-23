@@ -1,18 +1,20 @@
 package main
 
 import (
+	"github.com/0north/tflint-ruleset-0north-plugin/project"
+	"github.com/0north/tflint-ruleset-0north-plugin/rules"
 	"github.com/terraform-linters/tflint-plugin-sdk/plugin"
 	"github.com/terraform-linters/tflint-plugin-sdk/tflint"
-	"github.com/terraform-linters/tflint-ruleset-template/rules"
 )
 
 func main() {
 	plugin.Serve(&plugin.ServeOpts{
 		RuleSet: &tflint.BuiltinRuleSet{
 			Name:    "tflint-ruleset-0north-plugin",
-			Version: "0.1.0",
+			Version: project.Version,
 			Rules: []tflint.Rule{
 				rules.NewEnsureDefaultTagsRule(),
+				rules.NewValidateTagsRule(),
 			},
 		},
 	})
