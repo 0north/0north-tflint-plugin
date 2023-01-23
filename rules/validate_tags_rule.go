@@ -117,7 +117,7 @@ func (r *ValidateTagsRule) Check(runner tflint.Runner) error {
 	return nil
 }
 
-// Takes a Terraform block and verifies that if one of the validated tag is present it has one of the valid values
+// Takes a Terraform block and verifies that if one of the validated tags is present it has one of the valid values
 func (r *ValidateTagsRule) verifyValidTag(runner tflint.Runner, config *ValidateTagsRuleConfig, block *hclext.Block) error {
 	attribute, exists := block.Body.Attributes["tags"]
 	if !exists {
