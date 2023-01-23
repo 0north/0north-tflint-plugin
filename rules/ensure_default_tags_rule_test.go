@@ -16,7 +16,7 @@ func Test_EnsureDefaultTagsRule(t *testing.T) {
 		Expected helper.Issues
 	}{
 		{
-			Name: "Succeeds_WithProviderTags",
+			Name: "Succeeds_ForProvider_WithTagsPresent",
 			Content: `
 			provider "aws" {
 				region = "eu-west-1"
@@ -38,7 +38,7 @@ func Test_EnsureDefaultTagsRule(t *testing.T) {
 			Expected: helper.Issues{},
 		},
 		{
-			Name: "Fails_WithMissingProviderTags",
+			Name: "Fails_ForProvider_WithTagsMissing",
 			Content: `
 			provider "aws" {
 				region = "eu-west-1"
@@ -70,7 +70,7 @@ func Test_EnsureDefaultTagsRule(t *testing.T) {
 			},
 		},
 		{
-			Name: "Succeeds_WithResourceTagsPresent",
+			Name: "Succeeds_ForResource_WithTagsPresent",
 			Content: `
 			provider "aws" {
 				region = "eu-west-1"
@@ -90,7 +90,7 @@ func Test_EnsureDefaultTagsRule(t *testing.T) {
 			Expected: helper.Issues{},
 		},
 		{
-			Name: "Fails_WithResourceTagsMissing",
+			Name: "Fails_ForResource_WithTagsMissing",
 			Content: `
 			provider "aws" {
 				region = "eu-west-1"
@@ -125,6 +125,21 @@ func Test_EnsureDefaultTagsRule(t *testing.T) {
 					},
 				},
 			},
+		},
+		{
+			Name: "Succeeds_ForResource_WithTagsMissing_ButExcluded",
+			Content: `
+			resource "aws_instance" "ec2_instance" {
+				region = "eu-west-1"
+			}
+			  `,
+			Config: `
+			rule "ensure_default_tags" {
+			  enabled   = true
+			  tags		= ["team"]
+			  exclude	= ["aws_instance"]
+			}`,
+			Expected: helper.Issues{},
 		},
 	}
 

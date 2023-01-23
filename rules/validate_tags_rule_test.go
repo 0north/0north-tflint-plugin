@@ -254,6 +254,28 @@ func Test_ValidateTagsRule(t *testing.T) {
 				},
 			},
 		},
+		{
+			Name: "Succeeds_ForResource_WithInvalidTeamName_ButExcluded",
+			Content: `
+			resource "aws_instance" "ec2_instance" {
+				region = "eu-west-1"
+				tags = {
+					team = "cloud-crew"
+				}
+			}`,
+			Config: `
+			rule "validate_tags" {
+				enabled = true
+				tags	= [
+					{
+						tag = "team",
+						allowed_values = ["platform-engineering", "voyage-optimization"]
+					}
+				]
+				exclude = ["aws_instance"]
+			}`,
+			Expected: helper.Issues{},
+		},
 	}
 
 	rule := NewValidateTagsRule()
