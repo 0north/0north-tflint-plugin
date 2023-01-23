@@ -1,6 +1,6 @@
 # ensure_default_tags_rule
 
-Require specific tags for all AWS providers and AWS resource types that support them.
+Require specific tags for all AWS providers and AWS resource types that support them. This rule will find an issue if some providers are missing default_tags or if default_tags is not used and some resources are missing required tags.
 
 ## Configuration
 
