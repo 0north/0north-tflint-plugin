@@ -23,9 +23,10 @@ plugin "0north-plugin" {
 
 ## Rules
 
-| Name                | Description                                                     | Severity | Enabled | Link |
-| ------------------- | --------------------------------------------------------------- | -------- | ------- | ---- |
-| ensure_default_tags | Rule for linting AWS tags according to ZeroNorth specifications | WARNING  | ✔       |      |
+| Name                | Description                                                     | Severity | Enabled | Link                                                                                                       |
+| ------------------- | --------------------------------------------------------------- | -------- | ------- | ---------------------------------------------------------------------------------------------------------- |
+| ensure_default_tags | Rule for linting AWS tags according to ZeroNorth specifications | WARNING  | ✖️      | [Link](https://github.com/0north/tflint-ruleset-0north-plugin/blob/main/docs/rules/ensure_default_tags.md) |
+| validate_tags       | Rule for linting AWS tags according to ZeroNorth specifications | WARNING  | ✖️      | [Link](https://github.com/0north/tflint-ruleset-0north-plugin/blob/main/docs/rules/validate_tags.md)       |
 
 ## Building the plugin
 
