@@ -38,7 +38,7 @@ func (r *EnsureDefaultTagsRule) Name() string {
 
 // Enabled returns whether the rule is enabled by default
 func (r *EnsureDefaultTagsRule) Enabled() bool {
-	return true
+	return false
 }
 
 // Severity returns the rule severity
