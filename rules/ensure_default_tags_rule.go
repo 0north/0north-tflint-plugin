@@ -156,14 +156,14 @@ func (r *EnsureDefaultTagsRule) verifyRequiredTags(block *hclext.Block, runner t
 			}
 		}
 		if !found {
-			missingTags = append(missingTags, fmt.Sprintf("\"%s\"", requiredTag))
+			missingTags = append(missingTags, requiredTag)
 		}
 	}
 
 	if len(missingTags) > 0 {
 		err := runner.EmitIssue(
 			r,
-			fmt.Sprintf("The provider is missing the following tags: %s.", strings.Join(missingTags, ", ")),
+			fmt.Sprintf("The provider is missing the following tags: %s.", "\""+strings.Join(missingTags, "\", "+"\"")+"\""),
 			tagsBlock.Range(),
 		)
 		if err != nil {

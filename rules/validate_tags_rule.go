@@ -136,7 +136,7 @@ func (r *ValidateTagsRule) verifyValidTag(runner tflint.Runner, config *Validate
 					if !slices.Contains(validatedTag.AllowedValues, tags[tag]) {
 						err := runner.EmitIssue(
 							r,
-							fmt.Sprintf("Tag value %s is not allowed for tag %s (valid values are %s)", tags[tag], tag, strings.Join(validatedTag.AllowedValues, ", ")),
+							fmt.Sprintf("Tag value \"%s\" is not allowed for tag \"%s\" (valid values are %s)", tags[tag], tag, "\""+strings.Join(validatedTag.AllowedValues, "\", "+"\"")+"\""),
 							attribute.Range,
 						)
 						if err != nil {

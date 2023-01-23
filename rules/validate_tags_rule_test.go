@@ -90,7 +90,7 @@ func Test_ValidateTagsRule(t *testing.T) {
 			Expected: helper.Issues{
 				{
 					Rule:    NewValidateTagsRule(),
-					Message: "Tag value cloud-crew is not allowed for tag team (valid values are platform-engineering, voyage-optimization)",
+					Message: "Tag value \"cloud-crew\" is not allowed for tag \"team\" (valid values are \"platform-engineering\", \"voyage-optimization\")",
 					Range: hcl.Range{
 						Filename: "resource.tf",
 						Start:    hcl.Pos{Line: 5, Column: 6},
@@ -129,7 +129,7 @@ func Test_ValidateTagsRule(t *testing.T) {
 			Expected: helper.Issues{
 				{
 					Rule:    NewValidateTagsRule(),
-					Message: "Tag value cloud-crew is not allowed for tag team (valid values are platform-engineering, voyage-optimization)",
+					Message: "Tag value \"cloud-crew\" is not allowed for tag \"team\" (valid values are \"platform-engineering\", \"voyage-optimization\")",
 					Range: hcl.Range{
 						Filename: "resource.tf",
 						Start:    hcl.Pos{Line: 5, Column: 6},
@@ -208,7 +208,7 @@ func Test_ValidateTagsRule(t *testing.T) {
 			Expected: helper.Issues{
 				{
 					Rule:    NewValidateTagsRule(),
-					Message: "Tag value cloud-crew is not allowed for tag team (valid values are platform-engineering, voyage-optimization)",
+					Message: "Tag value \"cloud-crew\" is not allowed for tag \"team\" (valid values are \"platform-engineering\", \"voyage-optimization\")",
 					Range: hcl.Range{
 						Filename: "resource.tf",
 						Start:    hcl.Pos{Line: 4, Column: 5},
@@ -245,7 +245,7 @@ func Test_ValidateTagsRule(t *testing.T) {
 			Expected: helper.Issues{
 				{
 					Rule:    NewValidateTagsRule(),
-					Message: "Tag value cloud-crew is not allowed for tag team (valid values are platform-engineering, voyage-optimization)",
+					Message: "Tag value \"cloud-crew\" is not allowed for tag \"team\" (valid values are \"platform-engineering\", \"voyage-optimization\")",
 					Range: hcl.Range{
 						Filename: "resource.tf",
 						Start:    hcl.Pos{Line: 4, Column: 5},
