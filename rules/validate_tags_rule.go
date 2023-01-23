@@ -6,6 +6,7 @@ import (
 
 	"github.com/terraform-linters/tflint-plugin-sdk/hclext"
 	"github.com/terraform-linters/tflint-plugin-sdk/tflint"
+	"github.com/terraform-linters/tflint-ruleset-aws/project"
 	"github.com/terraform-linters/tflint-ruleset-aws/rules/tags"
 	"golang.org/x/exp/slices"
 )
@@ -46,7 +47,7 @@ func (r *ValidateTagsRule) Severity() tflint.Severity {
 
 // Link returns the rule reference link
 func (r *ValidateTagsRule) Link() string {
-	return "https://github.com/0north/tflint-ruleset-0north-plugin/blob/main/docs/rules/validate_tags_rule.md"
+	return project.ReferenceLink(r.Name())
 }
 
 // Checks the rule

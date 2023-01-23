@@ -10,6 +10,7 @@ import (
 	"github.com/terraform-linters/tflint-plugin-sdk/hclext"
 	"github.com/terraform-linters/tflint-plugin-sdk/helper"
 	"github.com/terraform-linters/tflint-plugin-sdk/tflint"
+	"github.com/terraform-linters/tflint-ruleset-aws/project"
 	awsRules "github.com/terraform-linters/tflint-ruleset-aws/rules"
 )
 
@@ -48,7 +49,7 @@ func (r *EnsureDefaultTagsRule) Severity() tflint.Severity {
 
 // Link returns the rule reference link
 func (r *EnsureDefaultTagsRule) Link() string {
-	return "https://github.com/0north/tflint-ruleset-0north-plugin/blob/main/docs/rules/ensure_default_tags_rule.md"
+	return project.ReferenceLink(r.Name())
 }
 
 // Checks the rule
