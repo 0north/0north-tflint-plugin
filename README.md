@@ -1,6 +1,6 @@
 # ZeroNorth TFLint Ruleset Plugin
 
-[![Build Status](https://github.com/terraform-linters/tflint-ruleset-template/workflows/build/badge.svg?branch=main)](https://github.com/terraform-linters/tflint-ruleset-template/actions)
+[![Build Status](https://github.com/0north/tflint-ruleset-0north-plugin/workflows/build/badge.svg?branch=main)](https://github.com/0north/tflint-ruleset-0north-plugin/actions)
 
 This is the repository for ZeroNorth's custom TFLint ruleset.
 
