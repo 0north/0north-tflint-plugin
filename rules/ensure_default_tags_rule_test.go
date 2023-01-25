@@ -5,7 +5,6 @@ import (
 
 	hcl "github.com/hashicorp/hcl/v2"
 	"github.com/terraform-linters/tflint-plugin-sdk/helper"
-	awsRules "github.com/terraform-linters/tflint-ruleset-aws/rules"
 )
 
 func Test_EnsureDefaultTagsRule(t *testing.T) {
@@ -116,7 +115,7 @@ func Test_EnsureDefaultTagsRule(t *testing.T) {
 					},
 				},
 				{
-					Rule:    awsRules.NewAwsResourceMissingTagsRule(),
+					Rule:    NewEnsureDefaultTagsRule(),
 					Message: "The resource is missing the following tags: \"team\".",
 					Range: hcl.Range{
 						Filename: "resource.tf",

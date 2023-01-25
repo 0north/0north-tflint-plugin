@@ -113,14 +113,14 @@ func (r *EnsureDefaultTagsRule) Check(runner tflint.Runner) error {
 		// If there are issues with both missing default tags and missing resource tags, output all issues found
 		if len(providerDefaultTagIssues) > 0 && len(awsRunner.Issues) > 0 {
 			for _, issue := range providerDefaultTagIssues {
-				err := runner.EmitIssue(issue.Rule, issue.Message, issue.Range)
+				err := runner.EmitIssue(r, issue.Message, issue.Range)
 				if err != nil {
 					return err
 				}
 			}
 
 			for _, issue := range awsRunner.Issues {
-				err := runner.EmitIssue(issue.Rule, issue.Message, issue.Range)
+				err := runner.EmitIssue(r, issue.Message, issue.Range)
 				if err != nil {
 					return err
 				}
