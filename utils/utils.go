@@ -9,7 +9,3 @@ import (
 func NewIssue(rule tflint.Rule, message string, issueRange hcl.Range) helper.Issue {
 	return helper.Issue{Rule: rule, Message: message, Range: issueRange}
 }
-
-func EmitIssue(runner tflint.Runner, issue helper.Issue) error {
-	return runner.EmitIssue(issue.Rule, issue.Message, issue.Range)
-}
