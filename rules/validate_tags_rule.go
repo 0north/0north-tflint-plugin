@@ -42,7 +42,7 @@ func (r *ValidateTagsRule) Enabled() bool {
 
 // Severity returns the rule severity
 func (r *ValidateTagsRule) Severity() tflint.Severity {
-	return tflint.WARNING
+	return tflint.ERROR
 }
 
 // Link returns the rule reference link
