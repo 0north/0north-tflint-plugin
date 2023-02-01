@@ -25,8 +25,8 @@ plugin "0north-plugin" {
 
 | Name                | Description                                                               | Severity | Enabled | Link                                                                                                       |
 | ------------------- | ------------------------------------------------------------------------- | -------- | ------- | ---------------------------------------------------------------------------------------------------------- |
-| ensure_default_tags | Ensures a set of required tags are present on all resources or providers. | WARNING  | ✖️      | [Link](https://github.com/0north/tflint-ruleset-0north-plugin/blob/main/docs/rules/ensure_default_tags.md) |
-| validate_tags       | Ensures a given set of tags can only have a given range of values.        | WARNING  | ✖️      | [Link](https://github.com/0north/tflint-ruleset-0north-plugin/blob/main/docs/rules/validate_tags.md)       |
+| ensure_default_tags | Ensures a set of required tags are present on all resources or providers. | ERROR    | ✖️      | [Link](https://github.com/0north/tflint-ruleset-0north-plugin/blob/main/docs/rules/ensure_default_tags.md) |
+| validate_tags       | Ensures a given set of tags can only have a given range of values.        | ERROR    | ✖️      | [Link](https://github.com/0north/tflint-ruleset-0north-plugin/blob/main/docs/rules/validate_tags.md)       |
 
 ## Building the plugin
 
