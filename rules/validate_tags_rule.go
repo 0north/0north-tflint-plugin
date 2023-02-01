@@ -127,7 +127,7 @@ func (r *ValidateTagsRule) verifyValidTag(runner tflint.Runner, config *Validate
 	var tags map[string]string
 	err := runner.EvaluateExpr(attribute.Expr, &tags, nil)
 	if err != nil {
-		return err
+		return nil
 	}
 
 	err = runner.EnsureNoError(err, func() error {

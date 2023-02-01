@@ -67,6 +67,35 @@ func Test_ValidateTagsRule(t *testing.T) {
 			Expected: helper.Issues{},
 		},
 		{
+			Name: "Succeeds_ForProvider_WithEmptyMap",
+			Content: `
+			provider "aws" {
+				region = "eu-west-1"
+				default_tags {
+					tags = var.context.tags
+				}
+			}
+			
+			variable "context" {
+				type = object({
+				  tags = map(string)
+				})
+				default = {}
+			  }
+			`,
+			Config: `
+			rule "validate_tags" {
+				enabled = true
+				tags	= [
+					{
+						tag = "team",
+						allowed_values = ["platform-engineering", "voyage-optimization"]
+					}
+				]
+			}`,
+			Expected: helper.Issues{},
+		},
+		{
 			Name: "Fails_ForProvider_WithInvalidTeamName_FromString",
 			Content: `
 			provider "aws" {
