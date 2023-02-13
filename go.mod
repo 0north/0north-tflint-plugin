@@ -3,7 +3,7 @@ module github.com/0north/tflint-ruleset-0north-plugin
 go 1.19
 
 require (
-	github.com/hashicorp/hcl/v2 v2.15.0
+	github.com/hashicorp/hcl/v2 v2.16.1
 	github.com/terraform-linters/tflint-plugin-sdk v0.15.0
 )
 
